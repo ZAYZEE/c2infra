@@ -13,11 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      
 
       - name: Deploy code
         run: |
-          ssh ec2-user@<YOUR_EC2_INSTANCE_IP> "cd /path/to/your/code && git pull"
+          ssh ec2-user@52.91.135.255 "cd /path/to/your/code && git pull"
